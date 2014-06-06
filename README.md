@@ -3,6 +3,9 @@ corehello.github.io
 
 corehello.github.io
 
+http://isnowfy.github.io/simple/
+http://isnowfy.github.io/about-simple-cn.html
+
 
 最近发现静态博客很流行啊，一是因为博客这东西本来就没多少文章，用上数据库，后端啥的有点杀鸡用牛刀的感觉，二是静态页面天然的速度优势，于是现在很多人便纷纷开始用静态博客了。加之github pages可以很方便而且是免费的放置静态页面，于是便有了像jelly，octopress等一系列好用的静态博客生成程序。而且现在dropbox也支持放置静态页面，也有了像farbox等一类好用的工具。
 
