@@ -1,4 +1,4 @@
-
+body{margin: 0px; padding: 0px;}
 header nav section footer aside{ display: inline;}
 
 header{height: 80px;width:100%;background-color:#333333;}
