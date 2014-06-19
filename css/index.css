@@ -1,0 +1,11 @@
+body{border: solid black 1px;}
+header nav section footer aside{border: solid black 1px; display: block;}
+
+header{height: 80px;width:100%;background-color:#333333;}
+
+nav{height: 15pxl width:100%;background-color:#cccccc;}
+section{height: 100px; width: 500px;background-color:#999999;float:left}
+footer{height: 80px; width: 100%;background-color:#000000;}
+
+aside{height: 500px; width: 100px;background-color:#989890;}
+
