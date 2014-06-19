@@ -1,5 +1,5 @@
-body{border: solid black 1px;}
-header nav section footer aside{border: solid black 1px; display: inline;}
+
+header nav section footer aside{ display: inline;}
 
 header{height: 80px;width:100%;background-color:#333333;}
 
