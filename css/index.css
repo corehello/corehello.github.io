@@ -2,7 +2,7 @@ body{margin: 0px; padding: 0px;}
 
 header{height: 80px;width:100%;background-color:#eeeeee;}
 
-nav{height: 40px; width:100%;background-color:#dddddd;text-align:center; }
+nav{height: 40px; width:100%;background-color:#dddddd;text-align:center; padding:5px;}
 section{height:700px; width: 100%;background-color:#cccccc;text-align:center;padding:10px;}
 footer{height: 80px; width: 100%;background-color:#dddddd;text-align:center;}
 aside{height: 500px; width: 100px;background-color:#989890;}
