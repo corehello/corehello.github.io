@@ -4,7 +4,7 @@ header nav section footer aside{ display: inline;}
 header{height: 80px;width:100%;background-color:#333333;}
 
 nav{height: 40px; width:100%;background-color:#cccccc;text-align:center; padding: auto auto;}
-section{height:768px; width: 100%;background-color:#999999;}
+section{height:700px; width: 100%;background-color:#999999;}
 footer{height: 80px; width: 100%;background-color:#000000;}
 
 aside{height: 500px; width: 100px;background-color:#989890;}
