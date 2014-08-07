@@ -13,5 +13,6 @@ div{border:solid 1px black;
     border-radius: 8px;
     box-shadow: 10px 10px 5px #eeeeee;
     background-color:#ffffff;
+    margin:0px auto;
 }
 a{margin: 0px 10px 0px 10px;}
