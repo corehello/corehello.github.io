@@ -2,14 +2,15 @@ body{margin: 0px; padding: 0px;}
 
 header{height: 80px;width:100%;background-color:#333333;}
 
-nav{height: 40px; width:100%;background-color:#cccccc;text-align:center; }
-section{height:700px; width: 100%;background-color:#999999;}
+nav{height: 40px; width:100%;background-color:#888888;text-align:center; }
+section{height:700px; width: 100%;background-color:#cccccc;}
 footer{height: 80px; width: 100%;background-color:#000000;}
 aside{height: 500px; width: 100px;background-color:#989890;}
 div{border:solid 1px black;
     margin: 10px;
     padding:10px;
     border-radius: 8px;
-    box-shadow: 10px 10px 5px #000000;
+    box-shadow: 10px 10px 5px #eeeeee;
+    background-color:#000000;
 }
 a{margin: 0px 10px 0px 10px;}
