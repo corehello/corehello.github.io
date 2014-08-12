@@ -8,7 +8,6 @@ footer{height: 80px; width: 100%;background-color:#dddddd;text-align:center;}
 aside{height: 500px; width: 100px;background-color:#989890;}
 div{border:solid 1px black;
     width:1000px;
-    margin: 10px;
     padding:10px;
     border-radius: 8px;
     box-shadow: 10px 10px 5px #eeeeee;
