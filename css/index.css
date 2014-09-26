@@ -59,3 +59,8 @@ span{
 #blogs{
     float:left;
 }
+
+#existed{
+    padding:0px;
+    width:0px;
+}
