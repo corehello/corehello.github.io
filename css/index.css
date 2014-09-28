@@ -56,8 +56,10 @@ span{
 #nagivator{
     height:100%;
     width:80px;
+    float:left;
 }
 #blogs{
+    float:left;
 }
 
 #existed{
