@@ -7,19 +7,19 @@ font-family: "Sans-serif";
 header{
 height: 80px;
 width:100%;
-background-color:#eeeeee;
+background-color:#ffffff;
 }
 
 nav{
 height: 40px;
 width:100%;
-background-color:#dddddd;
+background-color:#ffffff;
 text-align:center; 
 padding:5px;
 }
 
 section{
-background-color:#cccccc;
+background-color:#ffffff;
 text-align:center;
 padding:10px;
 }
@@ -27,13 +27,14 @@ padding:10px;
 footer{
 height: 80px; 
 width: 100%;
-background-color:#dddddd;
+background-color:#ffffff;
 text-align:center;
 }
 aside{
-height: 500px; width: 100px;background-color:#989890;}
+height: 500px; width: 100px;background-color:#ffffff;
+}
+
 div{border:solid 1px black;
-    width:1000px;
     padding:10px;
     border-radius: 8px;
     box-shadow: 10px 10px 5px #eeeeee;
