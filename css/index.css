@@ -2,69 +2,37 @@ body{
 margin: 0px;
 padding: 0px;
 font-family: "Sans-serif";
+text-align: center;
 }
 
-header{
-height: 80px;
-width:100%;
-padding:20px;
-text-align:center;
-background-color:#ffffff;
-}
-
-nav{
-height: 40px;
-width:100%;
-background-color:#ffffff;
-text-align:center; 
-padding:5px;
-}
-
-section{
-background-color:#ffffff;
-text-align:center;
-padding:10px;
-}
-
-footer{
-height: 80px; 
-width: 100%;
-background-color:#ffffff;
-text-align:center;
-}
-aside{
-height: 500px; width: 100px;background-color:#ffffff;
-}
-
-div{border:solid 1px black;
-    padding:10px;
-    box-shadow: 0px 0px 5px #eeeeee;
+div{
+    border:solid 1px black;
+    box-shadow: 0px 0px 20px #eeeeee;
     background-color:#ffffff;
-    margin:0px auto;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
 }
 
-span{
-    margin:0px;
-    font-size:36px;
-}
 
 #container{
-    margin:0px;
-    padding:10px;
-    border:0px;
+  margin: 0 0 0 33%;
+  border: 0px;
+  text-align: left;
+  padding: 10px;
 }
 
-#nagivator{
-    height:100%;
-    width:20%;
-    float:left;
-}
-#blogs{
-    float:left;
-    width:75%;
+#nag{
+  text-align: right;
+  float:left;
+  width:30%;
+  position: fixed;
+  height: 100%;
+  border: 0px;
 }
 
-.existed{
-    padding:0px;
-    width:0px;
+#title
+{
+  font-size:30px;
+  color: #2c2c2c;
 }
