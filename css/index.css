@@ -36,3 +36,19 @@ div{
   font-size:30px;
   color: #2c2c2c;
 }
+
+#footer{
+  position: absolute:
+  bottom: 0px;
+  left:0px;
+}
+
+a{
+  text-decoration: none;
+}
+
+#header{
+  height: 30px;
+  border: 0px;
+  font-size: 20px;
+}
