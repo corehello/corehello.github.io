@@ -31,6 +31,7 @@ function makeRequest(url) {
 function alertContents()
 {
   try {
+    console.log(httpRequest.readyState)
     if (httpRequest.readyState === 4) {
       if (httpRequest.status === 200) {
         content=httpRequest.responseText;

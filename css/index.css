@@ -16,19 +16,21 @@ div{
 
 
 #container{
-  margin: 0 0 0 33%;
+  margin: 0 0 0 338px;
   border: 0px;
   text-align: left;
   padding: 10px;
+  min-width: 500px;
 }
 
 #nag{
   text-align: right;
   float:left;
-  width:30%;
+  width:330px;
   position: fixed;
   height: 100%;
   border: 0px;
+  margin: 0;  
 }
 
 #title
@@ -51,4 +53,10 @@ a{
   height: 30px;
   border: 0px;
   font-size: 20px;
+}
+
+
+#blogs{
+  border: 0px;
+  box-shadow: 0px 0px 30px #eeeeee; 
 }
