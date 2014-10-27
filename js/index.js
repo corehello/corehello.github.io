@@ -4,7 +4,8 @@ var tags;
 var categories;
 var blogs;
 
-function makeRequest(url) {
+function makeRequest(url) 
+{
     if (window.XMLHttpRequest) { // Mozilla, Safari, ...
       httpRequest = new XMLHttpRequest();
     } else if (window.ActiveXObject) { // IE
@@ -83,8 +84,17 @@ function renderTags()
     var element = document.getElementById("tags"); 
     for(i=0; i< tags.data.length; i++)
     {
-          
+        var tagconent  = tags.data[i];
+        var newtag = document.createElement("div");
+        newtag.setAttribute("class", "tag");
+        var nt = newtag.createTextNode(tags.data[i].name + "("+ tags.data[i].count + ")");
+        newtag.appendChild(newtag);
     }
+}
+
+function renderCategpries()
+{
+    
 }
 
 function initContents()
