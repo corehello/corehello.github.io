@@ -70,9 +70,9 @@ function init()
 function initNagivator()
 {
     makeRequest('architecture/tags.json');
-    tags = JSON.prase(content);
+    tags = JSON.parse(content);
     makeRequest('architecture/categories.json');
-    categories = JSON.prase(content);
+    categories = JSON.parse(content);
     
     renderTags();
     renderCategpries();   
@@ -100,7 +100,7 @@ function renderCategpries()
 function initContents()
 {
     makeRequest('architecture/blogs.json');
-    blogs = JSON.prase(content);
+    blogs = JSON.parse(content);
     renderBlogs();
 }
 
