@@ -4,7 +4,7 @@ var tags = null;
 var categories = null;
 var blogs = null;
 
-function makeRequest(url) 
+function makeRequest(url, content) 
 {
     if (window.XMLHttpRequest) { // Mozilla, Safari, ...
       httpRequest = new XMLHttpRequest();
@@ -24,28 +24,28 @@ function makeRequest(url)
       alert('Giving up :( Cannot create an XMLHTTP instance');
       return false;
     }
-    httpRequest.onreadystatechange = alertContents;
+    httpRequest.onreadystatechange = function()
+    {
+      try {
+        console.log(httpRequest.readyState)
+        if (httpRequest.readyState === 4) {
+          if (httpRequest.status === 200) {
+            content=httpRequest.responseText;
+            alert(content);
+          } else {
+            alert('There was a problem with the request.');
+          }
+        }
+      }
+      catch( e ) {
+        alert('Caught Exception: ' + e.description);
+      }
+    }
     httpRequest.open('GET', url);
     httpRequest.send();
 }
 
-function alertContents()
-{
-  try {
-    console.log(httpRequest.readyState)
-    if (httpRequest.readyState === 4) {
-      if (httpRequest.status === 200) {
-        content=httpRequest.responseText;
-        alert(content);
-      } else {
-        alert('There was a problem with the request.');
-      }
-    }
-  }
-  catch( e ) {
-    alert('Caught Exception: ' + e.description);
-  }
-}
+
 
 function init()
 {
@@ -70,10 +70,10 @@ function init()
  */  
 function initNagivator()
 {
-    makeRequest('architecture/tags.json');
+    makeRequest('architecture/tags.json',content);
     alert(content);
     tags = JSON.parse(content);
-    makeRequest('architecture/categories.json');
+    makeRequest('architecture/categories.json',content);
     categories = JSON.parse(content);
     
     renderTags();
