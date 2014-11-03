@@ -23,7 +23,7 @@ function makeRequest(url, type_data)
       alert('Giving up :( Cannot create an XMLHTTP instance');
       return false;
     }
-    httpRequest.onreadystatechange = function(type_data)
+    httpRequest.onreadystatechange = function()
     {
       try {
         console.log(httpRequest.readyState)
