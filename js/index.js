@@ -73,11 +73,11 @@ function initNagivator()
     makeRequest('architecture/tags.json',content);
     alert(content);
     tags = JSON.parse(content);
-    makeRequest('architecture/categories.json',content);
-    categories = JSON.parse(content);
+    //makeRequest('architecture/categories.json',content);
+    //categories = JSON.parse(content);
     
     renderTags();
-    renderCategpries();   
+    //renderCategpries();   
 }
 
 function renderTags()
