@@ -107,9 +107,7 @@ function renderCates(cates)
 
 function initContents(blogs)
 {
-    makeRequest('architecture/blogs.json');
-    blogs = JSON.parse(content);
-    renderBlogs();
+    makeRequest('architecture/blogs.json', 'blogs');
 }
 
 
