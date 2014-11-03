@@ -76,7 +76,7 @@ function parsedata(origin, target)
 function initNagivator()
 {
     makeRequest('architecture/tags.json',content);
-    setTimeout(parsedata(content,tags),1000)
+    setTimeout(parsedata(content,tags),5000)
     //makeRequest('architecture/categories.json',content);
     //categories = JSON.parse(content);
     
