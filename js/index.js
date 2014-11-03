@@ -67,18 +67,23 @@ function init()
  *      }
  *  ]
  *  }
- */  
+ */ 
+function parsedata(origin, target)
+{
+  target = JSON.parse(httpRequest.responseText)
+}
+
 function initNagivator()
 {
     makeRequest('architecture/tags.json',content);
-    alert(content);
-    tags = JSON.parse(httpRequest.responseText);
+    setTimeout(parsedata(content,tags),1000)
     //makeRequest('architecture/categories.json',content);
     //categories = JSON.parse(content);
     
     renderTags();
     //renderCategpries();   
 }
+
 
 function renderTags()
 {
