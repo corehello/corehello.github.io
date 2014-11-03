@@ -72,7 +72,7 @@ function initNagivator()
 {
     makeRequest('architecture/tags.json',content);
     alert(content);
-    tags = JSON.parse(content);
+    tags = JSON.parse(httpRequest.responseText);
     //makeRequest('architecture/categories.json',content);
     //categories = JSON.parse(content);
     
