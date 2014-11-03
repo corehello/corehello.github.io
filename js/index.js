@@ -70,7 +70,7 @@ function init()
  */ 
 function parsedata(origin, target)
 {
-  target = JSON.parse(httpRequest.responseText)
+  target = JSON.parse(httpRequest.responseText);
 }
 
 function initNagivator()
