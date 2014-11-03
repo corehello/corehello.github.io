@@ -4,70 +4,6 @@ var tags = null;
 var categories = null;
 var blogs = null;
 
-function makeRequest(url, type_data, container) 
-{
-    if (window.XMLHttpRequest) { // Mozilla, Safari, ...
-      httpRequest = new XMLHttpRequest();
-    } else if (window.ActiveXObject) { // IE
-      try {
-        httpRequest = new ActiveXObject("Msxml2.XMLHTTP");
-      } 
-      catch (e) {
-        try {
-          httpRequest = new ActiveXObject("Microsoft.XMLHTTP");
-        } 
-        catch (e) {}
-      }
-    }
-
-    if (!httpRequest) {
-      alert('Giving up :( Cannot create an XMLHTTP instance');
-      return false;
-    }
-    httpRequest.onreadystatechange = function()
-    {
-      try {
-        console.log(httpRequest.readyState)
-        if (httpRequest.readyState === 4) {
-          if (httpRequest.status === 200) {
-            alert(type_data)
-            switch(type_data)
-            {
-              case "tags":
-                renderTags(JSON.parse(httpRequest.responseText));
-                break;
-              case "cates":
-                renderCates(JSON.parse(httpRequest.responseText));
-                break;
-              case "blogs":
-                renderBlogs(JSON.parse(httpRequest.responseText));
-                break;
-              case "blog":
-                insertContentToContainer(httpRequest.responseText, container);
-                break;
-              default:
-                alert("not supported this funciton");
-            }
-          } else {
-            alert('There was a problem with the request.');
-          }
-        }
-      }
-      catch( e ) {
-        alert('Caught Exception: ' + e.description);
-      }
-    }
-    httpRequest.open('GET', url);
-    httpRequest.send();
-}
-
-
-
-function init()
-{
-    initNagivator();
-    initContents();
-}
 
 /* tags.json
  * {
@@ -155,3 +91,71 @@ function insertContentToContainer(content, container)
 {
   container.innerHTML = content; 
 }
+
+
+function makeRequest(url, type_data, container) 
+{
+    if (window.XMLHttpRequest) { // Mozilla, Safari, ...
+      httpRequest = new XMLHttpRequest();
+    } else if (window.ActiveXObject) { // IE
+      try {
+        httpRequest = new ActiveXObject("Msxml2.XMLHTTP");
+      } 
+      catch (e) {
+        try {
+          httpRequest = new ActiveXObject("Microsoft.XMLHTTP");
+        } 
+        catch (e) {}
+      }
+    }
+
+    if (!httpRequest) {
+      alert('Giving up :( Cannot create an XMLHTTP instance');
+      return false;
+    }
+    httpRequest.onreadystatechange = function()
+    {
+      try {
+        console.log(httpRequest.readyState)
+        if (httpRequest.readyState === 4) {
+          if (httpRequest.status === 200) {
+            alert(type_data)
+            switch(type_data)
+            {
+              case "tags":
+                renderTags(JSON.parse(httpRequest.responseText));
+                break;
+              case "cates":
+                renderCates(JSON.parse(httpRequest.responseText));
+                break;
+              case "blogs":
+                renderBlogs(JSON.parse(httpRequest.responseText));
+                break;
+              case "blog":
+                insertContentToContainer(httpRequest.responseText, container);
+                break;
+              default:
+                alert("not supported this funciton");
+            }
+          } else {
+            alert('There was a problem with the request.');
+          }
+        }
+      }
+      catch( e ) {
+        alert('Caught Exception: ' + e.description);
+      }
+    }
+    httpRequest.open('GET', url);
+    httpRequest.send();
+}
+
+
+
+function init()
+{
+    initNagivator();
+    initContents();
+}
+
+
