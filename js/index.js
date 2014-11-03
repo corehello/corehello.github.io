@@ -1,10 +1,9 @@
 var httpRequest = null;
-var content = null;
 var tags = null;
 var categories = null;
 var blogs = null;
 
-function makeRequest(url, content) 
+function makeRequest(url) 
 {
     if (window.XMLHttpRequest) { // Mozilla, Safari, ...
       httpRequest = new XMLHttpRequest();
@@ -30,7 +29,7 @@ function makeRequest(url, content)
         console.log(httpRequest.readyState)
         if (httpRequest.readyState === 4) {
           if (httpRequest.status === 200) {
-            content=httpRequest.responseText;
+            window.content=httpRequest.responseText;
           } else {
             alert('There was a problem with the request.');
           }
@@ -69,14 +68,13 @@ function init()
  */ 
 function parsedata(origin, target)
 {
-  alert(httpRequest.responseText);
   target = JSON.parse(origin);
 }
 
 function initNagivator()
 {
     makeRequest('architecture/tags.json',content);
-    setTimeout(parsedata(content,tags),5000)
+    setTimeout(parsedata(window.content,tags),5000)
     //makeRequest('architecture/categories.json',content);
     //categories = JSON.parse(content);
     
