@@ -69,7 +69,7 @@ function init()
  */ 
 function parsedata(origin, target)
 {
-  alert(origin);
+  alert(httpRequest.responseText);
   target = JSON.parse(origin);
 }
 
