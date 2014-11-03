@@ -29,6 +29,7 @@ function makeRequest(url, action)
         console.log(httpRequest.readyState)
         if (httpRequest.readyState === 4) {
           if (httpRequest.status === 200) {
+            alert(action)
             switch(action)
             {
               case "tags":
