@@ -134,7 +134,7 @@ function initContents()
  *  }
  */
 
-function renderBlogers(blogs)
+function renderBlogs(blogs)
 {
   var i;
   var element = document.getElementById("blogs")
