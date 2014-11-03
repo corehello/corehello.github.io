@@ -36,6 +36,7 @@ function alertContents()
     if (httpRequest.readyState === 4) {
       if (httpRequest.status === 200) {
         content=httpRequest.responseText;
+        alert(content);
       } else {
         alert('There was a problem with the request.');
       }
@@ -70,7 +71,7 @@ function init()
 function initNagivator()
 {
     makeRequest('architecture/tags.json');
-    alert(content)
+    alert(content);
     tags = JSON.parse(content);
     makeRequest('architecture/categories.json');
     categories = JSON.parse(content);
