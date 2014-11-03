@@ -1,8 +1,8 @@
-var httpRequest;
-var content;
-var tags;
-var categories;
-var blogs;
+var httpRequest = null;
+var content = null;
+var tags = null;
+var categories = null;
+var blogs = null;
 
 function makeRequest(url) 
 {
