@@ -3,7 +3,7 @@ var tags = null;
 var categories = null;
 var blogs = null;
 
-function makeRequest(url) 
+function makeRequest(url, action) 
 {
     if (window.XMLHttpRequest) { // Mozilla, Safari, ...
       httpRequest = new XMLHttpRequest();
@@ -29,7 +29,20 @@ function makeRequest(url)
         console.log(httpRequest.readyState)
         if (httpRequest.readyState === 4) {
           if (httpRequest.status === 200) {
-            window.content=httpRequest.responseText;
+            switch(action)
+            {
+              case "tags":
+                renderTags(JSON.parse(httpRequest.responseText));
+                break;
+              case "cates":
+                renderCates(JSON.parse(httpRequest.responseText);
+                break;
+              case "blogs":
+                renderBlogs(JSON.parse(httpRequest.responseText);
+                break;
+              default:
+                alert("not supported this funciton");
+            }
           } else {
             alert('There was a problem with the request.');
           }
@@ -73,21 +86,11 @@ function parsedata(origin, target)
 
 function initNagivator()
 {
-    makeRequest('architecture/tags.json');
-    alert(window.content);
-    while (window.content)
-    {
-    }
-    parsedata(window.content,tags);
-    //makeRequest('architecture/categories.json',content);
-    //categories = JSON.parse(content);
-    
-    renderTags();
-    //renderCategpries();   
+    makeRequest('architecture/tags.json',tags);
 }
 
 
-function renderTags()
+function renderTags(tags)
 {
     var i;
     var element = document.getElementById("tags"); 
@@ -101,12 +104,12 @@ function renderTags()
     }
 }
 
-function renderCategpries()
+function renderCates(cates)
 {
     
 }
 
-function initContents()
+function initContents(blogs)
 {
     makeRequest('architecture/blogs.json');
     blogs = JSON.parse(content);
