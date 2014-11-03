@@ -88,7 +88,7 @@ function renderTags()
         var newtag = document.createElement("div");
         newtag.setAttribute("class", "tag");
         var nt = newtag.createTextNode(tags.data[i].name + "("+ tags.data[i].count + ")");
-        newtag.appendChild(newtag);
+        newtag.appendChild(nt);
     }
 }
 
