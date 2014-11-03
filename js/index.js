@@ -82,7 +82,7 @@ function init()
 
 function initNagivator()
 {
-    makeRequest('architecture/tags.json','tags');
+    makeRequest('architecture/tags.json',"tags");
 }
 
 
