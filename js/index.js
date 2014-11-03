@@ -3,7 +3,7 @@ var tags = null;
 var categories = null;
 var blogs = null;
 
-function makeRequest(url, action) 
+function makeRequest(url, type_data) 
 {
     if (window.XMLHttpRequest) { // Mozilla, Safari, ...
       httpRequest = new XMLHttpRequest();
@@ -23,14 +23,13 @@ function makeRequest(url, action)
       alert('Giving up :( Cannot create an XMLHTTP instance');
       return false;
     }
-    httpRequest.onreadystatechange = function(action)
+    httpRequest.onreadystatechange = function(type_data)
     {
       try {
         console.log(httpRequest.readyState)
         if (httpRequest.readyState === 4) {
           if (httpRequest.status === 200) {
-            alert(action)
-            switch(action)
+            switch(type_data)
             {
               case "tags":
                 renderTags(JSON.parse(httpRequest.responseText));
