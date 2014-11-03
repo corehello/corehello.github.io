@@ -31,7 +31,6 @@ function makeRequest(url, content)
         if (httpRequest.readyState === 4) {
           if (httpRequest.status === 200) {
             content=httpRequest.responseText;
-            alert(content);
           } else {
             alert('There was a problem with the request.');
           }
@@ -70,7 +69,8 @@ function init()
  */ 
 function parsedata(origin, target)
 {
-  target = JSON.parse(httpRequest.responseText);
+  alert(origin);
+  target = JSON.parse(origin);
 }
 
 function initNagivator()
