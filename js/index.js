@@ -79,14 +79,10 @@ function init()
  *  ]
  *  }
  */ 
-function parsedata(origin, target)
-{
-  target = JSON.parse(origin);
-}
 
 function initNagivator()
 {
-    makeRequest('architecture/tags.json',tags);
+    makeRequest('architecture/tags.json','tags');
 }
 
 
