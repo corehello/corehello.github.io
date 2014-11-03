@@ -35,10 +35,10 @@ function makeRequest(url, action)
                 renderTags(JSON.parse(httpRequest.responseText));
                 break;
               case "cates":
-                renderCates(JSON.parse(httpRequest.responseText);
+                renderCates(JSON.parse(httpRequest.responseText));
                 break;
               case "blogs":
-                renderBlogs(JSON.parse(httpRequest.responseText);
+                renderBlogs(JSON.parse(httpRequest.responseText));
                 break;
               default:
                 alert("not supported this funciton");
