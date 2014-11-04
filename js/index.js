@@ -119,7 +119,6 @@ function makeRequest(url, type_data, container)
         console.log(httpRequest.readyState)
         if (httpRequest.readyState === 4) {
           if (httpRequest.status === 200) {
-            alert(type_data)
             switch(type_data)
             {
               case "tags":
@@ -129,6 +128,7 @@ function makeRequest(url, type_data, container)
                 renderCates(JSON.parse(httpRequest.responseText));
                 break;
               case "blogs":
+                alert(type_data);
                 renderBlogs(JSON.parse(httpRequest.responseText));
                 break;
               case "blog":
