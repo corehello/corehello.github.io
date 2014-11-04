@@ -59,3 +59,11 @@ a{
   border: 0px;
   box-shadow: 0px 0px 30px #eeeeee; 
 }
+
+#tags .tag{
+  border: 0px;
+}
+
+#blogs .blog{
+  border: 0px;
+}

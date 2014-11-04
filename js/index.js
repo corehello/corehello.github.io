@@ -29,11 +29,10 @@ function renderTags(tags)
     for(i=0; i< tags.data.length; i++)
     {
         var tagcontent  = tags.data[i];
-        var newtag = document.createElement("div");
+        var newtag = document.createElement("span")
         newtag.setAttribute("class", "tag");
-        var nt = newtag.createTextNode(tagcontent.name + "("+ tagcontent.count + ")");
-        newtag.appendChild(nt);
-        element.appendChild(newtag);
+        newtag.innerHTML =  tagcontent.name + "("+ tagcontent.count + ")" + " ";
+        element.appendChild(newtag)
     }
 }
 
@@ -75,9 +74,7 @@ function renderBlogs(blogs)
     var blogcontent = blogs.data[i];
     var newblog = document.createElement("div");
     newblog.setAttribute("class", "blog");
-    var nb = newblog.createElement("div");
-    //makeRequest('blogs/'+blogcontent.url, 'blog', nb);
-    newblog.appendChild(nb);
+    makeRequest('blogs/'+blogcontent.url, 'blog', newblog);
     element.appendChild(newblog);
   }
 }
@@ -92,10 +89,10 @@ function insertContentToContainer(content, container)
 function makeRequest(url, type_data, container) 
 {
     if (window.XMLHttpRequest) { // Mozilla, Safari, ...
-      httpRequest = new XMLHttpRequest();
+      var httpRequest = new XMLHttpRequest();
     } else if (window.ActiveXObject) { // IE
       try {
-        httpRequest = new ActiveXObject("Msxml2.XMLHTTP");
+       var httpRequest = new ActiveXObject("Msxml2.XMLHTTP");
       } 
       catch (e) {
         try {
@@ -111,35 +108,30 @@ function makeRequest(url, type_data, container)
     }
     httpRequest.onreadystatechange = function()
     {
-      try {
-        console.log(httpRequest.readyState)
-        if (httpRequest.readyState === 4) {
-          if (httpRequest.status ===200 ) {
-            console.log("type_data is " + type_data);
-            switch(type_data)
-            {
-              case "tags":
-                renderTags(JSON.parse(httpRequest.responseText));
-                break;
-              case "cates":
-                renderCates(JSON.parse(httpRequest.responseText));
-                break;
-              case "blogs":
-                renderBlogs(JSON.parse(httpRequest.responseText));
-                break;
-              case "blog":
-                insertContentToContainer(httpRequest.responseText, container);
-                break;
-              default:
-                console.log("not supported this funciton");
-            }
-          } else {
-            console.log('There was a problem with the request.');
+      console.log(httpRequest.readyState)
+      if (httpRequest.readyState === 4) {
+        if (httpRequest.status ===200 ) {
+          console.log("type_data is " + type_data);
+          switch(type_data)
+          {
+            case "tags":
+              renderTags(JSON.parse(httpRequest.responseText));
+              break;
+            case "cates":
+              renderCates(JSON.parse(httpRequest.responseText));
+              break;
+            case "blogs":
+              renderBlogs(JSON.parse(httpRequest.responseText));
+              break;
+            case "blog":
+              insertContentToContainer(httpRequest.responseText, container);
+              break;
+            default:
+              console.log("not supported this funciton");
           }
+        } else {
+          console.log('There was a problem with the request.');
         }
-      }
-      catch( e ) {
-        console.log('Caught Exception: ' + e.message);
       }
     }
     httpRequest.open('GET', url);
@@ -150,8 +142,9 @@ function makeRequest(url, type_data, container)
 
 function init()
 {
-    initNagivator();
+
     initContents();
+    initNagivator();
 }
 
 
