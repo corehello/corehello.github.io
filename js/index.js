@@ -119,6 +119,7 @@ function makeRequest(url, type_data, container)
         console.log(httpRequest.readyState)
         if (httpRequest.readyState === 4) {
           if (httpRequest.status === 200) {
+            console.log("type_data is " + type_data);
             switch(type_data)
             {
               case "tags":
@@ -128,22 +129,21 @@ function makeRequest(url, type_data, container)
                 renderCates(JSON.parse(httpRequest.responseText));
                 break;
               case "blogs":
-                alert(type_data);
                 renderBlogs(JSON.parse(httpRequest.responseText));
                 break;
               case "blog":
                 insertContentToContainer(httpRequest.responseText, container);
                 break;
               default:
-                alert("not supported this funciton");
+                console.log("not supported this funciton");
             }
           } else {
-            alert('There was a problem with the request.');
+            console.log('There was a problem with the request.');
           }
         }
       }
       catch( e ) {
-        alert('Caught Exception: ' + e.description);
+        console.log('Caught Exception: ' + e.description);
       }
     }
     httpRequest.open('GET', url);
