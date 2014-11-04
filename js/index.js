@@ -120,7 +120,7 @@ function makeRequest(url, type_data, container)
       try {
         console.log(httpRequest.readyState)
         if (httpRequest.readyState === 4) {
-          if (httpRequest.status === 200) {
+          if (httpRequest.status >=200 && httpRequest.status < 300 || httpRequest.status == 304 ) {
             console.log("type_data is " + type_data);
             switch(type_data)
             {
