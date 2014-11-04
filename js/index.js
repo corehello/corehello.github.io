@@ -115,7 +115,6 @@ function makeRequest(url, type_data, container)
         console.log(httpRequest.readyState)
         if (httpRequest.readyState === 4) {
           if (httpRequest.status ===200 ) {
-            console.log(httpRequest.responseText);
             console.log("type_data is " + type_data);
             switch(type_data)
             {
