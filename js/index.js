@@ -1,4 +1,4 @@
-
+var content;
 /* tags.json
  * {
  *  name:"tags",
