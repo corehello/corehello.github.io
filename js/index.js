@@ -80,7 +80,7 @@ function renderBlogs(blogs)
     var newblog = document.createElement("div");
     newblog.setAttribute("class", "blog");
     var nb = newblog.createElement("div");
-    makeRequest('blogs/'+blogcontent.url, 'blog', nb);
+    //makeRequest('blogs/'+blogcontent.url, 'blog', nb);
     newblog.appendChild(nb);
     element.appendChild(newblog);
   }
@@ -143,7 +143,7 @@ function makeRequest(url, type_data, container)
         }
       }
       catch( e ) {
-        console.log('Caught Exception: ' + e.description);
+        console.log('Caught Exception: ' + e.message);
       }
     }
     httpRequest.open('GET', url);
