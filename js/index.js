@@ -1,9 +1,3 @@
-var httpRequest;
-var content;
-var tags;
-var categories;
-var blogs;
-
 
 /* tags.json
  * {
