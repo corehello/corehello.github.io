@@ -1,8 +1,8 @@
-var httpRequest = null;
-var content = null;
-var tags = null;
-var categories = null;
-var blogs = null;
+var httpRequest;
+var content;
+var tags;
+var categories;
+var blogs;
 
 
 /* tags.json
