@@ -67,7 +67,7 @@ function initContents()
 
 function renderBlogs(blogs)
 {
-  console.log(blogs);
+  console.log("renderBlogs : " +blogs);
   var i;
   var element = document.getElementById("blogs")
   for(i=0; i<blogs.data.length; i++)
