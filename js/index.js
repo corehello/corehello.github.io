@@ -29,6 +29,7 @@ function initNagivator()
 
 function renderTags(tags)
 {
+    console.log(tags);
     var i;
     var element = document.getElementById("tags"); 
     for(i=0; i< tags.data.length; i++)
@@ -72,6 +73,7 @@ function initContents()
 
 function renderBlogs(blogs)
 {
+  console.log(blogs);
   var i;
   var element = document.getElementById("blogs")
   for(i=0; i<blogs.data.length; i++)
