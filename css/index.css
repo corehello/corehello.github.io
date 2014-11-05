@@ -7,11 +7,9 @@ text-align: center;
 
 div{
     border:solid 0px black;
-    box-shadow: 0px 0px 20px #eeeeee;
     background-color:#ffffff;
     margin: 10px;
     padding: 10px;
-    border-radius: 10px;
 }
 
 
@@ -31,6 +29,7 @@ div{
   height: 100%;
   border: 0px;
   margin: 0;
+  box-shadow: 0px 0px 20px #c2c2c2;
 }
 
 #title
@@ -45,6 +44,7 @@ div{
   position: relative:
   bottom: 0px;
   left:0px;
+  font-size:15px;
 }
 
 a{
@@ -53,19 +53,26 @@ a{
 
 #header{
   border: 0px;
-  font-size: 20px;
+  font-size: 25px;
+  padding: 15px;
 }
 
+#header p{
+  padding: 20px 10px;
+  box-shadow: 0px 0px 10px #c0c0c0;
+  margin: 5px;
+}
 
 #blogs{
   border: 0px;
-  box-shadow: 0px 0px 30px #eeeeee; 
 }
 
 #tags .tag{
   border: 0px;
 }
-
+.blog{
+  box-shadow: 0px 0px 30px #c2c2c2; 
+}
 #blogs .blog{
   border: 0px;
 }
