@@ -66,7 +66,7 @@ function initContents()
 
 function renderBlogs(blogs)
 {
-  console.log("renderBlogs : " +blogs);
+  console.log(blogs);
   var i;
   var element = document.getElementById("blogs")
   for(i=0; i<blogs.data.length; i++)
@@ -82,6 +82,7 @@ function renderBlogs(blogs)
 
 function insertContentToContainer(content, container)
 {
+  console.log(content);
   container.innerHTML = content; 
 }
 
