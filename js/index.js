@@ -1,4 +1,7 @@
 var content;
+var tags;
+var blogs;
+
 /* tags.json
  * {
  *  name:"tags",
@@ -37,11 +40,6 @@ function renderTags(tags)
 }
 
 
-function renderCates(cates)
-{
-    
-}
-
 function initContents()
 {
   makeRequest('architecture/blogs.json', 'blogs', content);
@@ -64,18 +62,29 @@ function initContents()
  *  }
  */
 
-function renderBlogs(blogs)
+function renderBlogs(blogs,options)
 {
-  console.log(blogs);
-  var i;
-  var element = document.getElementById("blogs")
-  for(i=0; i<blogs.data.length; i++)
+  if(blogs.data.length>= options.start)
   {
-    var blogcontent = blogs.data[i];
-    var newblog = document.createElement("div");
-    newblog.setAttribute("class", "blog");
-    makeRequest('blogs/'+blogcontent.url, 'blog', newblog);
-    element.appendChild(newblog);
+    console.log(blogs);
+    var i;
+    var element = document.getElementById("blogs");
+    element.innerHTML="";
+    console.log(options.start,options.end)
+    for(i=options.start-1; i<(blogs.data.length>options.end?options.end:blogs.data.length); i++)
+    {
+      var blogcontent = blogs.data[i];
+      var newblog = document.createElement("div");
+      newblog.setAttribute("class", "blog");
+      makeRequest('blogs/'+blogcontent.url, 'blog', newblog);
+      var newtext = document.createTextNode(blogcontent.created_at);
+      console.log(blogcontent.created_at);
+      newblog.appendChild(newtext);
+      element.appendChild(newblog);
+    }
+    var nextpage = document.createElement("div");
+    nextpage.innerHTML = '<a onclick="nextpage()">Next page</a>';
+    element.appendChild(nextpage);
   }
 }
 
@@ -83,7 +92,7 @@ function renderBlogs(blogs)
 function insertContentToContainer(content, container)
 {
   console.log(content);
-  container.innerHTML = content; 
+  container.innerHTML = content + container.innerHTML; 
 }
 
 
@@ -116,13 +125,14 @@ function makeRequest(url, type_data, container)
           switch(type_data)
           {
             case "tags":
+              tags = JSON.parse(httpRequest.responseText); 
               renderTags(JSON.parse(httpRequest.responseText));
               break;
-            case "cates":
-              renderCates(JSON.parse(httpRequest.responseText));
-              break;
             case "blogs":
-              renderBlogs(JSON.parse(httpRequest.responseText));
+              blogs = JSON.parse(httpRequest.responseText);
+              options = {start: 1, end: 5};
+              renderBlogs(JSON.parse(httpRequest.responseText),options);
+              window.page = 1;
               break;
             case "blog":
               insertContentToContainer(httpRequest.responseText, container);
@@ -139,7 +149,13 @@ function makeRequest(url, type_data, container)
     httpRequest.send();
 }
 
-
+function nextpage()
+{
+  window.page = window.page + 1;
+  console.log(window.page);
+  options = {start: 5*(window.page-1)+1, end: 5*window.page};
+  renderBlogs(blogs, options);
+}
 
 function init()
 {
