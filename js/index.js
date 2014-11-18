@@ -1,6 +1,7 @@
 var content;
 var tags;
 var blogs;
+var blogcontents;
 
 /* tags.json
  * {
@@ -56,6 +57,9 @@ function initContents()
  *          "tags1",
  *          "tags2"
  *          ]
+ *        "keywords": [
+ *          "first"
+ *        ]
  *      }
  *
  *    ]
@@ -66,7 +70,6 @@ function renderBlogs(blogs,options)
 {
   if(blogs.data.length>= options.start)
   {
-    console.log(blogs);
     var i;
     var element = document.getElementById("blogs");
     element.innerHTML="";
@@ -82,16 +85,26 @@ function renderBlogs(blogs,options)
       newblog.appendChild(newtext);
       element.appendChild(newblog);
     }
-    var nextpage = document.createElement("div");
-    nextpage.innerHTML = '<a onclick="nextpage()">Next page</a>';
-    element.appendChild(nextpage);
+    if(window.page != 1)
+    {
+      var prepage = document.createElement("span");
+      prepage.setAttribute("class", "left");
+      prepage.innerHTML = '<a onclick="nextpage(0)">Pre page</a>';
+      element.appendChild(prepage);
+    }
+    if(window.page != (blogs.data.length-blogs.data.length%5 + 5)/5)
+    {
+      var nextpage = document.createElement("span");
+      nextpage.setAttribute("class", "right")
+      nextpage.innerHTML = '<a onclick="nextpage(1)">Next page</a>';
+      element.appendChild(nextpage);
+    }
   }
 }
 
 
 function insertContentToContainer(content, container)
 {
-  console.log(content);
   container.innerHTML = content + container.innerHTML; 
 }
 
@@ -125,14 +138,15 @@ function makeRequest(url, type_data, container)
           switch(type_data)
           {
             case "tags":
-              tags = JSON.parse(httpRequest.responseText); 
+              tags = JSON.parse(httpRequest.responseText);
               renderTags(JSON.parse(httpRequest.responseText));
               break;
             case "blogs":
               blogs = JSON.parse(httpRequest.responseText);
+              blogcontents = blogs;
               options = {start: 1, end: 5};
-              renderBlogs(JSON.parse(httpRequest.responseText),options);
               window.page = 1;
+              renderBlogs(blogcontents, options);
               break;
             case "blog":
               insertContentToContainer(httpRequest.responseText, container);
@@ -149,12 +163,18 @@ function makeRequest(url, type_data, container)
     httpRequest.send();
 }
 
-function nextpage()
+function nextpage(w)
 {
-  window.page = window.page + 1;
+  window.page = window.page + (2*w-1);
   console.log(window.page);
   options = {start: 5*(window.page-1)+1, end: 5*window.page};
-  renderBlogs(blogs, options);
+  console.log(options);
+  renderBlogs(blogcontents, options);
+}
+
+function search()
+{
+
 }
 
 function init()

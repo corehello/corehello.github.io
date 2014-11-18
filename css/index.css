@@ -80,3 +80,13 @@ a{
 #blogs .blog{
   border: 0px;
 }
+
+span.left{
+  position: absolute;
+  float: left;
+}
+
+span.right{
+  position:absolute;
+  float: right;
+}
