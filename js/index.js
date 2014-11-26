@@ -74,7 +74,7 @@ function renderBlogs(blogs,options)
     var element = document.getElementById("blogs");
     element.innerHTML="";
     console.log(options.start,options.end)
-    for(i=options.start-1; i<(blogs.data.length>options.end?options.end:blogs.data.length); i++)
+    for(i=blogs.data.length-options.start; i>=(blogs.data.length-options.end<0?0:blogs.data.length-options.end); i--)
     {
       var blogcontent = blogs.data[i];
       var newblog = document.createElement("div");
