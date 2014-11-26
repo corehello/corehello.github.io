@@ -1,0 +1,27 @@
+<h3>Gentoo install issues I met</h3>
+<p>Recently I try to install Gentoo which is automatically optimized and customized for just about any application or need. Details in <a href="http://www.gentoo.org/main/en/about.xml">About gentoo</a></p>
+<p>Firstly, I want to install gentoo via USB driver. But It prompt a error message like "can not found mountpoint balabala....". So I turn to install it via VM.</p>
+<p>I install Gentoo on fedora 20 kvm with 1 cpu and 1G RAM, add the minimal CD in kvm as a cdrom and boot from cdrom, then I install it refer to <a href="http://www.gentoo.org/doc/en/gentoo-x86-quickinstall.xml">gentoo quick install</a></p>
+<p>Issue 1: install kernel <br/>
+  According to the guide, seems some module will not be installed automatically. so I use genkernel to do all the things.
+<pre>
+  #genkernel --splash --no-install --no-clean --menuconfig all
+</pre>
+Details refers to <a href="https://wiki.gentoo.org/wiki/Genkernel">genkernel detail</a> 
+</p>
+<p>Since gentoo now use grub2 than grub, so something should be changed to match grub2, generate config file via grub2-mkconfig with <a href="http://wiki.gentoo.org/wiki/GRUB2">grub2 for gentoo</a></p>
+
+<p>And I also install kde for gentoo, and also met some issues resolved</p>
+<p>Install kde for gentoo via <a href="http://wiki.gentoo.org/wiki/KDE">kde for gentoo</a></p>
+<p>
+<ul>
+<li>Issue 1: can not find /etc/conf.d/xdm, solution-> install xorg-server</li>
+<li>Issue 2: when emerge package it prompt message like configration file need update, solution-> run `etc-update`</li>
+</ul>
+</p>
+<p>And finally I install the basic kde environment by myself with google.</p>
+
+<p>Time statics: install kernel take about 5 hours I remember.
+install kde take about 8 hours I remember.</p>
+<p>Conclusion: Gentoo is realy a nice OS for the world, but means it take more time to handle it, it use the best package manager portage and best performance, it give me help to understand how a OS is running and configuration, also I take to many time to solve issue which I met when install it.</p>
+<p>Most important: When got a error, do not google immediatly, the error offen come with the detail help to solve this issue with you, so do not worry to read so many words, It is realy helpful to solve the issue.</p>

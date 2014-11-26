@@ -11,6 +11,16 @@
       "keywords": [
         "first"
       ]
-    } 
+    },
+    {
+      "url" : "install_gentoo.html",
+      "created_at" : "23:24 NOV 26 2014",
+      "tags" : [
+        "gentoo"
+      ],
+      "keywords" : [
+        "gentoo"
+      ]
+    }
   ]
 }
