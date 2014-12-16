@@ -74,7 +74,7 @@ a{
 }
 .blog{
   margin: 20px 10px;
-  border: solid gray 1px;
+  border: solid #c0c0c0 1px;
 }
 #blogs .blog{
   border: 0px;
