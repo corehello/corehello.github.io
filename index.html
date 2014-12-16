@@ -45,4 +45,24 @@
   ga('send', 'pageview');
 
   </script>
+  <script>
+  window.onresize = function() {
+    function viewPort() {
+      var h = window.innerHeight 
+           || document.documentElement.clientHeight 
+           || document.getElementsByTagName('body')[0].clientHeight;
+      var w = window.innerWidth 
+            || document.documentElement.clientWidth 
+            || document.getElementsByTagName('body')[0].clientWidth;
+
+      return {width : w, height : h};
+    }
+
+    var size = viewPort();
+    if ( size.width <= 690) {
+
+      window.location.href = "mypage.cfm?Wth=" + size.width + + size.height + "";
+    }
+  };
+  </script>
 </html>
