@@ -14,7 +14,9 @@ div{
 
 
 #container{
-  margin: 0 0 0 338px;
+  position: fixed;
+  top: 0px;
+  left: 338px;
   border: 0px;
   text-align: left;
   padding: 10px;
