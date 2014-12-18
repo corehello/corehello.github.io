@@ -83,12 +83,12 @@ a{
   
 }
 
-span.left{
+span[class~="left"]{
   position: absolute;
   float: left;
 }
 
-span.right{
+span[class~="right"]{
   position:absolute;
   float: right;
 }
@@ -98,3 +98,8 @@ span.right{
   border: solid 1px #c0c0c0;
 }
 
+.circle{
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
