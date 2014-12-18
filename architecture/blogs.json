@@ -21,6 +21,17 @@
       "keywords" : [
         "gentoo"
       ]
+    },
+    {
+      "url" : "on_my_way_to_lisp.html",
+      "created_at" : "23:24 NOV 26 2014",
+      "tags" : [
+        "lisp"
+      ],
+      "keywords" : [
+        "lisp",
+        "functional programming"
+      ]
     }
   ]
 }

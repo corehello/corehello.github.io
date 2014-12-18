@@ -92,3 +92,9 @@ span.right{
   position:absolute;
   float: right;
 }
+
+.blog .sourceCode{
+  background-color: #eee;
+  border: solid 1px #c0c0c0;
+}
+

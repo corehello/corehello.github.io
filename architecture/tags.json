@@ -2,11 +2,11 @@
   "name" : "tags",
   "data" : [
     {
-      "name":"test_tag1",
-      "count": 11
+      "name":"gentoo",
+      "count": 1
     },
     {
-      "name" : "test_tag2",
+      "name" : "lisp",
       "count" : 1
     }
   ]
