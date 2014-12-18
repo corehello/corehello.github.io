@@ -85,10 +85,12 @@ a{
 
 span[class~="left"]{
   float: left;
+  padding-bottom: 20px;
 }
 
 span[class~="right"]{
   float: right;
+  padding-bottom: 20px;
 }
 
 .blog .sourceCode{

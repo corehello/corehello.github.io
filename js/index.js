@@ -73,7 +73,7 @@ function renderBlogs(blogs,options)
     var i;
     var element = document.getElementById("blogs");
     element.innerHTML="";
-    console.log(options.start,options.end)
+    console.log(options.start,options.end);
     for(i=blogs.data.length-options.start; i>=(blogs.data.length-options.end<0?0:blogs.data.length-options.end); i--)
     {
       var blogcontent = blogs.data[i];
@@ -89,14 +89,17 @@ function renderBlogs(blogs,options)
     {
       var prepage = document.createElement("span");
       prepage.setAttribute("class", "left");
-      prepage.innerHTML = '<a onclick="nextpage(0)">Pre page</a>';
+      prepage.innerHTML = '<a onclick="nextpage(0)"><--Prepage</a>';
       element.appendChild(prepage);
     }
+    var pagenum = document.createElement("span")
+    pagenum.innerText = window.page+"/"+((blogs.data.length-blogs.data.length%5)/5 +1 )
+    element.appendChild(pagenum)
     if(window.page != (blogs.data.length-blogs.data.length%5 + 5)/5)
     {
       var nextpage = document.createElement("span");
       nextpage.setAttribute("class", "right")
-      nextpage.innerHTML = '<a onclick="nextpage(1)">Next page</a>';
+      nextpage.innerHTML = '<a onclick="nextpage(1)">Nextpage--></a>';
       element.appendChild(nextpage);
     }
   }
