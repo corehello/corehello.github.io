@@ -84,12 +84,10 @@ a{
 }
 
 span[class~="left"]{
-  position: absolute;
   float: left;
 }
 
 span[class~="right"]{
-  position:absolute;
   float: right;
 }
 
