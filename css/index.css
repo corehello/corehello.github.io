@@ -33,6 +33,7 @@ div{
   height: 100%;
   border-right: solid 1px #c0c0c0;
   margin: 0;
+  overflow: scroll;
 }
 
 #title
