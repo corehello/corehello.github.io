@@ -5,8 +5,6 @@
       "url" : "firstblog.html",
       "created_at" : "22:21 NOV 17 2014",
       "tags" : [
-        "tags1",
-        "tags2"
       ],
       "keywords": [
         "first"
@@ -19,7 +17,8 @@
         "gentoo"
       ],
       "keywords" : [
-        "gentoo"
+        "gentoo",
+        "install"
       ]
     },
     {
@@ -31,6 +30,17 @@
       "keywords" : [
         "lisp",
         "functional programming"
+      ]
+    },
+    {
+      "url" : "bash_history_expansion.html",
+      "created_at" : "Tue Mar  3 22:29:52 CST 2015",
+      "tags" : [
+        "bash"
+      ],
+      "keywords" : [
+        "bash",
+        "history expansion"
       ]
     }
   ]

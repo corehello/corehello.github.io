@@ -1,0 +1,16 @@
+<h1 id="bash-history-expansion">Bash History Expansion</h1>
+<h2 id="how-to-use-bash-history-expansion">How to use bash history expansion</h2>
+<h3 id="examples">Examples:</h3>
+<ol type="1">
+<li>re-execute the last commands:<br /><code>echo !!</code> shortern for <code>echo !-1</code></li>
+<li>re-execute the second last command: <code>echo !-2</code><br /></li>
+<li>re-execute the last command with string replace<br /><code>service sshd start</code><br /><code>^start^stop^</code> equal <code>!!:s/start/stop</code><br /></li>
+<li>execute command with the last argument of the last command<br /><code>echo !$</code> shortern for <code>echo !!:$</code><br /></li>
+<li>execute command with the first argument of the last command<br /><code>echo !^</code> shortern for <code>echo !!:1</code><br /></li>
+<li>execute command with all argument of the last command<br /><code>echo !!:*</code> shortern for <code>!!:1-$</code></li>
+<li>The most complex command:<br /><code>echo !-3:2-3:gs/start/stop/</code></li>
+</ol>
+<h3 id="reference">reference:</h3>
+<ol type="1">
+<li><a href="http://www.gnu.org/software/bash/manual/bash.html#History-Interaction">bash history expansion</a></li>
+</ol>
