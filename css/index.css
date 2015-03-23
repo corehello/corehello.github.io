@@ -18,26 +18,38 @@ div{
 }
 
 
-#container{
-  position: fixed;
-  top: 0px;
-  left: 330px;
-  border: 0px;
-  text-align: left;
-  padding: 10px;
-  min-width: 500px;
-  height: 100%;
-  overflow: scroll;
-}
+@media screen and (min-width: 600px) {
+  #container{
+    position: fixed;
+    top: 0px;
+    left: 330px;
+    border: 0px;
+    text-align: left;
+    padding: 10px;
+    height: 100%;
+    overflow: scroll;
+  }
 
-#nag{
-  text-align: right;
-  float:left;
-  width:330px;
-  position: fixed;
-  height: 100%;
-  border-right: solid 1px #c0c0c0;
-  margin: 0;
+  #nag{
+    text-align: right;
+    float:left;
+    width:330px;
+    position: fixed;
+    height: 100%;
+    border-right: solid 1px #c0c0c0;
+    margin: 0;
+  }
+}
+@media screen and (max-width: 599px){
+  #container{
+    text-align: left;
+  }
+  #nag{
+    text-align: right;
+  }
+  #footer{
+    display: none;
+  }
 }
 
 #title
@@ -49,7 +61,7 @@ div{
 }
 
 #footer{
-  position: absolute;
+  position: fixed;
   bottom: 0;
   font-size:15px;
   margin-bottom: 20px;
@@ -111,4 +123,18 @@ span[class~="right"]{
 
 code{
   background-color: #ccc;
+}
+
+
+.floatleft{
+  float: left;
+}
+
+.floatright{
+  float: right;
+}
+
+.center{
+  margin: 0 auto;
+  display: inline-block;
 }

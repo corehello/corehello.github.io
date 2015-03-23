@@ -17,7 +17,7 @@ var blogcontents;
  *      }
  *  ]
  *  }
- */ 
+ */
 
 function initNagivator()
 {
@@ -29,7 +29,7 @@ function renderTags(tags)
 {
     console.log(tags);
     var i;
-    var element = document.getElementById("tags"); 
+    var element = document.getElementById("tags");
     for(i=0; i< tags.data.length; i++)
     {
         var tagcontent  = tags.data[i];
@@ -85,45 +85,52 @@ function renderBlogs(blogs,options)
       newblog.appendChild(newtext);
       element.appendChild(newblog);
     }
+    var pagebar = document.createElement("div")
+    pagebar.style.textAlign="center"
     if(window.page != 1)
     {
       var prepage = document.createElement("span");
-      prepage.setAttribute("class", "left");
+      prepage.setAttribute("class", "floatleft");
       prepage.innerHTML = '<a onclick="nextpage(0)"><--Prepage</a>';
-      element.appendChild(prepage);
+      pagebar.appendChild(prepage);
     }
+
+    var pagecon = document.createElement("div")
     var pagenum = document.createElement("span")
     pagenum.innerText = window.page+"/"+((blogs.data.length-blogs.data.length%5)/5 +1 )
-    element.appendChild(pagenum)
+    pagecon.appendChild(pagenum)
+    pagebar.appendChild(pagecon)
+
     if(window.page != (blogs.data.length-blogs.data.length%5 + 5)/5)
     {
       var nextpage = document.createElement("span");
-      nextpage.setAttribute("class", "right")
+      nextpage.setAttribute("class", "floatright")
       nextpage.innerHTML = '<a onclick="nextpage(1)">Nextpage--></a>';
-      element.appendChild(nextpage);
+      pagebar.appendChild(nextpage);
     }
+    element.appendChild(pagebar)
   }
 }
 
 
 function insertContentToContainer(content, container)
 {
-  container.innerHTML = content + container.innerHTML; 
+  container.innerHTML = content + container.innerHTML;
 }
 
 
-function makeRequest(url, type_data, container) 
+function makeRequest(url, type_data, container)
 {
     if (window.XMLHttpRequest) { // Mozilla, Safari, ...
       var httpRequest = new XMLHttpRequest();
     } else if (window.ActiveXObject) { // IE
       try {
        var httpRequest = new ActiveXObject("Msxml2.XMLHTTP");
-      } 
+      }
       catch (e) {
         try {
           httpRequest = new ActiveXObject("Microsoft.XMLHTTP");
-        } 
+        }
         catch (e) {}
       }
     }
@@ -186,5 +193,3 @@ function init()
     initContents();
     initNagivator();
 }
-
-
