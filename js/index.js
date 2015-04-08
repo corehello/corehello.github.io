@@ -101,7 +101,7 @@ function renderBlogs(blogs,options)
     pagecon.appendChild(pagenum)
     pagebar.appendChild(pagecon)
 
-    if(window.page != (blogs.data.length-blogs.data.length%5 + 5)/5)
+    if(window.page != (blogs.data.length-blogs.data.length%5)/5)
     {
       var nextpage = document.createElement("span");
       nextpage.setAttribute("class", "floatright")
