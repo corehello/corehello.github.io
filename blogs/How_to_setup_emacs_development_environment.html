@@ -1,0 +1,38 @@
+<h2 id="how-to-setup-common-lisp-development">How to setup common lisp development</h2>
+<h3 id="step-1-download-and-install-emacs">Step 1: Download and install Emacs</h3>
+<p>You can download and install via:</p>
+<ul>
+<li>yum install emacs (RedHat serials, like centos, fedora)</li>
+<li>apt-get install emacs (debian serials, like ubuntu, kali ...)</li>
+<li>For Mac osx download emacs from <a href="http://emacsformacosx.com">here</a></li>
+<li>For windows users(Better to switch to unix-like system, linux for mac osx)</li>
+</ul>
+<h3 id="step-2-install-slime-for-emacs">Step 2: Install slime for emacs</h3>
+<h4 id="add-the-following-line-to-you-.emacs">Add the following line to you ~/.emacs:</h4>
+<pre><code>(setq package-archives &#39;((&quot;gnu&quot; . &quot;http://elpa.gnu.org/packages/&quot;)
+                    (&quot;marmalade&quot; . &quot;https://marmalade-repo.org/packages/&quot;)
+                    (&quot;melpa&quot; . &quot;http://melpa.milkbox.net/packages/&quot;)))
+(add-to-list &#39;package-archives &#39;(&quot;marmalade&quot; . &quot;https://marmalade-repo.org/packages/&quot;))
+(add-to-list &#39;package-archives &#39;(&quot;melpa&quot; . &quot;http://melpa.milkbox.net/packages/&quot;))
+(add-to-list &#39;package-archives &#39;(&quot;org&quot; . &quot;http://orgmode.org/elpa/&quot;) t) ; Org-mode&#39;s repository</code></pre>
+<h4 id="install-slime-from-meppa-source">Install slime from meppa source</h4>
+<ul>
+<li>launch emacs</li>
+<li>type &quot;Alt-x&quot;, and input &quot;package-install&quot;, then press &quot;enter&quot;</li>
+<li>type &quot;slime&quot;, press &quot;enter&quot;</li>
+<li>wait some seconds(depend on your network speed)</li>
+</ul>
+<h3 id="step-3-install-a-common-lisp-interpreter-and-compiler">Step 3: Install a common lisp interpreter and compiler</h3>
+<p>You can choose any software to do this, like sbcl, clisp ...<br />And after you install it, append the following line to ~/.emacs</p>
+<pre><code>(setq inferior-lisp-program &quot;/usr/local/bin/sbcl&quot;)
+(setq slime-contribs &#39;(slime-fancy))</code></pre>
+<h3 id="step-4-restart-emacs-and-start-slime">Step 4: Restart emacs, and start slime</h3>
+<ul>
+<li>Restart emacs</li>
+<li><p>type &quot;Alt-x&quot;, then &quot;slime&quot;<br />And after all is done, there should be a prompt message come out:</p>
+<p>; SLIME 2015-02-19<br />CL-USER&gt;</p></li>
+</ul>
+<h3 id="references">References:</h3>
+<ol>
+<li><a href="https://common-lisp.net/project/slime/">slime official site</a></li>
+</ol>

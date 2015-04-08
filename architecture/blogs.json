@@ -42,6 +42,19 @@
         "bash",
         "history expansion"
       ]
+    },
+    {
+      "url" : "How_to_setup_emacs_development_environment.html",
+      "created_at" : "Wed Apr  8 20:21:33 CST 2015",
+      "tags" : [
+        "slime",
+        "lisp"
+      ],
+      "keywords" : [
+        "slime",
+        "common lisp",
+        "emacs"
+      ]
     }
   ]
 }
