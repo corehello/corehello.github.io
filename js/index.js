@@ -97,7 +97,7 @@ function renderBlogs(blogs,options)
 
     var pagecon = document.createElement("div")
     var pagenum = document.createElement("span")
-    pagenum.innerText = window.page+"/"+((blogs.data.length-blogs.data.length%5 -1)/5 +1 )
+    pagenum.innerText = window.page+"/"+Math.round(blogs.data.length/5)
     pagecon.appendChild(pagenum)
     pagebar.appendChild(pagecon)
 
