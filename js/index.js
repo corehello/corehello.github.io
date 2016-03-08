@@ -20,8 +20,13 @@ var blogcontents;
  */
 
 function initNagivator()
-{
-    makeRequest('architecture/tags.json',"tags", content);
+{   
+    function tagscallback(data)
+    {
+              tags = JSON.parse(data);
+              renderTags(tags);
+    }
+    makeRequest('architecture/tags.json', tagscallback);
 }
 
 
@@ -43,7 +48,16 @@ function renderTags(tags)
 
 function initContents()
 {
-  makeRequest('architecture/blogs.json', 'blogs', content);
+    function blogscallback(data)
+    {
+              blogs = JSON.parse(data);
+              blogcontents = blogs;
+              options = {start: 1, end: 5};
+              window.page = 1;
+              renderBlogs(blogcontents, options);
+
+    };
+    makeRequest('architecture/blogs.json', blogscallback);
 }
 
 /*
@@ -79,7 +93,7 @@ function renderBlogs(blogs,options)
       var blogcontent = blogs.data[i];
       var newblog = document.createElement("div");
       newblog.setAttribute("class", "blog");
-      makeRequest('blogs/'+blogcontent.url, 'blog', newblog);
+      makeRequest('blogs/'+blogcontent.url, insertContentToContainer(newblog));
       var newtext = document.createTextNode(blogcontent.created_at);
       console.log(blogcontent.created_at);
       newblog.appendChild(newtext);
@@ -113,13 +127,15 @@ function renderBlogs(blogs,options)
 }
 
 
-function insertContentToContainer(content, container)
+function insertContentToContainer(container,content)
 {
-  container.innerHTML = content + container.innerHTML;
+  return function (c){
+      container.innerHTML = c + container.innerHTML;
+  }
 }
 
 
-function makeRequest(url, type_data, container)
+function makeRequest(url, callback)
 {
     if (window.XMLHttpRequest) { // Mozilla, Safari, ...
       var httpRequest = new XMLHttpRequest();
@@ -144,26 +160,9 @@ function makeRequest(url, type_data, container)
       console.log(httpRequest.readyState)
       if (httpRequest.readyState === 4) {
         if (httpRequest.status ===200 ) {
-          console.log("type_data is " + type_data);
-          switch(type_data)
-          {
-            case "tags":
-              tags = JSON.parse(httpRequest.responseText);
-              renderTags(JSON.parse(httpRequest.responseText));
-              break;
-            case "blogs":
-              blogs = JSON.parse(httpRequest.responseText);
-              blogcontents = blogs;
-              options = {start: 1, end: 5};
-              window.page = 1;
-              renderBlogs(blogcontents, options);
-              break;
-            case "blog":
-              insertContentToContainer(httpRequest.responseText, container);
-              break;
-            default:
-              console.log("not supported this funciton");
-          }
+          data = httpRequest.responseText;
+          callback(data);
+          
         } else {
           console.log('There was a problem with the request.');
         }
