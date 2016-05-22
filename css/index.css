@@ -27,13 +27,13 @@ div{
     text-align: left;
     padding: 10px;
     height: 100%;
-    overflow: scroll;
+    width: 75%;
   }
 
   #nag{
     text-align: right;
     float:left;
-    width:330px;
+    width:25%;
     position: fixed;
     height: 100%;
     border-right: solid 1px #c0c0c0;
@@ -93,8 +93,11 @@ a{
   border: 0px;
 }
 .blog{
-  margin: 20px 10px;
+  margin: 20px;
   border: solid 1px #c0c0c0;
+  text-align: left;
+  overflow: scroll;
+  height: 90%;
 }
 #blogs .blog{
 

@@ -20,7 +20,7 @@ var blogcontents;
  */
 
 function initNagivator()
-{   
+{
     function tagscallback(data)
     {
               tags = JSON.parse(data);
@@ -92,11 +92,8 @@ function renderBlogs(blogs,options)
     {
       var blogcontent = blogs.data[i];
       var newblog = document.createElement("div");
-      newblog.setAttribute("class", "blog");
-      makeRequest('blogs/'+blogcontent.url, insertContentToContainer(newblog));
-      var newtext = document.createTextNode(blogcontent.created_at);
-      console.log(blogcontent.created_at);
-      newblog.appendChild(newtext);
+      newblog.blogid=i;
+      newblog.innerHTML = '<a onclick=pop_blog(' + "\"" + blogcontent["url"].toString() + "\"" + ')>' + blogcontent["url"].split(".")[0].split("_").join(" ") + "</a>";
       element.appendChild(newblog);
     }
     var pagebar = document.createElement("div")
@@ -126,6 +123,20 @@ function renderBlogs(blogs,options)
   }
 }
 
+function pop_blog(params)
+{
+  var newblog = document.getElementById("blog");
+  newblog.innerHTML = "";
+  newblog.setAttribute("class", "blog");
+  console.log("loading...");
+  makeRequest('blogs/'+ params, insertContentToContainer(newblog));
+  document.getElementById("blogcontext").style.display = "block";
+}
+
+function closeblog()
+{
+  document.getElementById('blogcontext').style.display='none'
+}
 
 function insertContentToContainer(container,content)
 {
@@ -162,7 +173,7 @@ function makeRequest(url, callback)
         if (httpRequest.status ===200 ) {
           data = httpRequest.responseText;
           callback(data);
-          
+
         } else {
           console.log('There was a problem with the request.');
         }
