@@ -97,30 +97,18 @@ function renderBlogs(blogs,options)
       newblog.innerHTML = '<a onclick=pop_blog(' + "\"" + blogcontent["url"].toString() + "\"" + ')>' + blogcontent["url"].split(".")[0].split("_").join(" ") + "</a>";
       element.appendChild(newblog);
     }
-    var pagebar = document.createElement("div")
-    pagebar.style.textAlign="center"
-    if(window.page != 1)
-    {
-      var prepage = document.createElement("span");
-      prepage.setAttribute("class", "floatleft");
-      prepage.innerHTML = '<a onclick="nextpage(0)"><--Prepage</a>';
-      pagebar.appendChild(prepage);
-    }
 
-    var pagecon = document.createElement("div")
-    var pagenum = document.createElement("span")
-    pagenum.innerText = window.page+" / "+Math.round(blogs.data.length/5)
-    pagecon.appendChild(pagenum)
-    pagebar.appendChild(pagecon)
-
-    if(window.page != (blogs.data.length-blogs.data.length%5)/5)
+    if(window.page == 1)
     {
-      var nextpage = document.createElement("span");
-      nextpage.setAttribute("class", "floatright")
-      nextpage.innerHTML = '<a onclick="nextpage(1)">Nextpage--></a>';
-      pagebar.appendChild(nextpage);
+      document.getElementById("prepage").setAttribute("style", "display: none")
     }
-    element.appendChild(pagebar)
+    
+    document.getElementById("pagenumber").innerText = window.page+" / "+ Math.ceil(blogs.data.length/5)
+    
+    if(window.page == Math.ceil(blogs.data.leggth/5))
+    {
+      document.getElementById("nextpage").setAttribute("style", "display: none")
+    }
   }
 }
 

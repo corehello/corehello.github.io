@@ -55,6 +55,15 @@
         "common lisp",
         "emacs"
       ]
+    },
+    {
+        "url": "Container_learning_resources.html",
+        "created_at": "Tue May  1 21:04:08 CST 2018",
+        "tags": [
+            "container",
+            "kubernetes",
+            "OpenShift"
+        ]
     }
   ]
 }

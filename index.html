@@ -34,11 +34,15 @@
       </div>
       <div id="blogs" onload="initContents()">
       </div>
+      <div style="text-align: center"> 
+        <span class="floatleft" id="prepage"><a onclick="nextpage(0)"><--Prepage</a></span>
+        <span id="pagenumber"></span>
+        <span class="floatright" id="nextpage"><a onclick="nextpage(1)">Nextpage--></a></span>
+      </div>
     </div>
     <div id="blogcontext" class="ele" style="display:none;background-color:rgba(255,255,255,0.9);height:100%;width:100%;position:fixed;left:0;top:0;z-index:999">
       <span onclick="closeblog()">CLOSE</span>
       <div id="blog"></div>
-      <div>   </div>
     </div>
   </body>
   <script>
