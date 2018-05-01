@@ -93,6 +93,7 @@ function renderBlogs(blogs,options)
       var blogcontent = blogs.data[i];
       var newblog = document.createElement("div");
       newblog.blogid=i;
+      newblog.setAttribute("class", "blog")
       newblog.innerHTML = '<a onclick=pop_blog(' + "\"" + blogcontent["url"].toString() + "\"" + ')>' + blogcontent["url"].split(".")[0].split("_").join(" ") + "</a>";
       element.appendChild(newblog);
     }
@@ -108,7 +109,7 @@ function renderBlogs(blogs,options)
 
     var pagecon = document.createElement("div")
     var pagenum = document.createElement("span")
-    pagenum.innerText = window.page+"/"+Math.round(blogs.data.length/5)
+    pagenum.innerText = window.page+" / "+Math.round(blogs.data.length/5)
     pagecon.appendChild(pagenum)
     pagebar.appendChild(pagecon)
 
